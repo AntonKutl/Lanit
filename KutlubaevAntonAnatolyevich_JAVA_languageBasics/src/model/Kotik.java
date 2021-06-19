@@ -26,6 +26,7 @@ public class Kotik {
         counterKotik++;
     }
 
+
     private boolean play() {
         return functions("играет");
     }
