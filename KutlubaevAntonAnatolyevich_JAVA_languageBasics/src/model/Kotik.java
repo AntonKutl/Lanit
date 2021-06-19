@@ -6,13 +6,13 @@ public class Kotik {
     private String name;
     private int weight;
     private String meow;
-    private int satiety= (int) (Math.random()*10 + 1);
+    private int satiety = (int) (Math.random() * 10 + 1);
 
     public static int getCounterKotik() {
         return counterKotik;
     }
 
-    private static int counterKotik=0;
+    private static int counterKotik = 0;
 
     public Kotik() {
         counterKotik++;
@@ -26,85 +26,87 @@ public class Kotik {
         counterKotik++;
     }
 
-    private boolean play(){
+    private boolean play() {
         return functions("играет");
-    };
+    }
 
-    private boolean sleep(){
+
+    private boolean sleep() {
         return functions("спит");
-    };
+    }
 
-    private boolean chaseMouse(){
+
+    private boolean chaseMouse() {
         return functions("гоняеться за мышью");
-    };
+    }
 
-    private boolean purr(){
+
+    private boolean purr() {
         return functions("мурлычит");
-    };
+    }
 
-    private boolean washesUp(){
+
+    private boolean washesUp() {
         return functions("умываеться");
-    };
+    }
 
-    private void eat(int satiety){
-        this.satiety+=satiety;
-        System.out.println("Котик ест. Сытость увеличина на "+satiety);
-    };
 
-    private void eat(int satiety, String meal){
-        this.satiety+=satiety;
-        System.out.println("Котик ест "+meal+" Сытость увеличина на "+satiety);
-    };
+    private void eat(int satiety) {
+        this.satiety += satiety;
+        System.out.println("Котик ест. Сытость увеличина на " + satiety);
+    }
 
-    private void eat(){
-        eat(8,"колбоса");
-    };
 
-    public void liveAnotherDay(){
-        for (int i=0; i<24; i++){
-            switch ((int) (Math.random()*5 + 1)){
+    private void eat(int satiety, String meal) {
+        this.satiety += satiety;
+        System.out.println("Котик ест " + meal + " Сытость увеличина на " + satiety);
+    }
+
+
+    private void eat() {
+        eat(8, "колбоса");
+    }
+
+    public void liveAnotherDay() {
+        for (int i = 0; i < 24; i++) {
+            switch ((int) (Math.random() * 5 + 1)) {
                 case 1:
-                    if(!play()){
+                    if (!play()) {
                         eat();
-                        i--;
                     }
                     break;
                 case 2:
-                    if(!sleep()){
+                    if (!sleep()) {
                         eat(5);
-                        i--;
                     }
                     break;
                 case 3:
-                    if(!chaseMouse()){
-                        eat(10,"вискас");
-                        i--;
+                    if (!chaseMouse()) {
+                        eat(10, "вискас");
                     }
                     break;
                 case 4:
-                    if(!purr()){
+                    if (!purr()) {
                         eat(15);
-                        i--;
                     }
                     break;
 
                 case 5:
-                    if(!washesUp()){
+                    if (!washesUp()) {
                         eat();
-                        i--;
                     }
                     break;
             }
         }
     }
 
-    private boolean functions (String actions){
-        if (satiety>0){
-            System.out.println(name+" "+actions);
+    private boolean functions(String actions) {
+        if (satiety > 0) {
+            System.out.println(name + " " + actions);
             satiety--;
             return true;
-        }else {
-            System.out.println(name+" голоден. Покормите котика");
+        } else {
+            System.out.println(name + " голоден. Покормите котика");
             return false;
         }
     }
