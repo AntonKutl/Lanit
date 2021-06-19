@@ -3,7 +3,7 @@ package animals;
 import foods.Food;
 
 public class Sheep extends Herbivore implements Run, Voice {
-    private String name="Овца";
+    private String name = "Овца";
 
     public String getName() {
         return name;
@@ -11,12 +11,12 @@ public class Sheep extends Herbivore implements Run, Voice {
 
     @Override
     public void run() {
-        System.out.println(name+" бежит");
+        System.out.println(name + " бежит");
     }
 
     @Override
     public String voice() {
-        return name+" говорит Беее";
+        return name + " говорит Беее";
     }
 
 }

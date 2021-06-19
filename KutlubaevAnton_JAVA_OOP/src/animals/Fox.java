@@ -15,6 +15,6 @@ public class Fox extends Carnivorous implements Voice, Run {
 
     @Override
     public String voice() {
-        return name+" говорит Гав";
+        return name + " говорит Гав";
     }
 }
