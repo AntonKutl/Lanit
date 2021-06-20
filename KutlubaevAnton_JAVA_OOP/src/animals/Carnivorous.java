@@ -8,9 +8,8 @@ public abstract class Carnivorous extends Animal {
 
     @Override
     public String eat(Food food) {
-        Object o = food;
 
-        if (o instanceof Meat) {
+        if (food instanceof Meat) {
             return " съела " + food.getName();
         } else {
             return " не ест " + food.getName();
